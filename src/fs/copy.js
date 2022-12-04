@@ -6,7 +6,7 @@ import path from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const isFolderExists = async (pathName) => {
+const isFolderExist = async (pathName) => {
     const folderPath = path.resolve(__dirname, pathName);
 
     try {
@@ -20,7 +20,7 @@ const isFolderExists = async (pathName) => {
 
 const copy = async () => {
     // Write your code here
-    if (!await isFolderExists('files') || await isFolderExists('files_copy')) {
+    if (!await isFolderExist('files') || await isFolderExist('files_copy')) {
         throw 'FS operation failed';
     } else {
         fs.readdir(path.resolve(__dirname, 'files'))
